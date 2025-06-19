@@ -1,0 +1,1113 @@
+        .contact-item i {
+            font-size: 2rem;
+            color: #00bfff;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover i {
+            text-shadow: 0 0 20px #00bfff;
+            transform: scale(1.1);
+        }
+
+        /* Instagram specific styling */
+        .contact-item .fa-instagram {
+            color: #E4405F;
+        }
+
+        .contact-item:hover .fa-instagram {
+            text-shadow: 0 0 20px #E4405F;
+        }
+
+        /* LinkedIn specific styling */
+        .contact-item .fa-linkedin-in {
+            color: #0077B5;
+        }
+
+        .contact-item:hover .fa-linkedin-in {
+            text-shadow: 0 0 20px #0077B5;
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thalman Thilak - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 191, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #00bfff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 15px #00bfff;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: #00bfff;
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        .nav-item.blog {
+            color: #00d4ff;
+            font-weight: 500;
+        }
+
+        .nav-item.blog:hover,
+        .nav-item.blog.active {
+            color: #00bfff;
+            text-shadow: 0 0 10px #00d4ff;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #00bfff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 160px;
+            min-height: calc(100vh - 160px);
+        }
+
+        .page {
+            padding: 2rem 2rem;
+            min-height: calc(100vh - 240px);
+            scroll-margin-top: 160px;
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        .page:last-child {
+            border-bottom: none;
+        }
+
+        .page.light {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Home Page Styles */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 240px);
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #00bfff;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 191, 255, 0.3);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #00bfff, #0080cc);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 191, 255, 0.5);
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            align-items: start;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+            min-height: 500px;
+            padding-top: 2rem;
+        }
+
+        .profile-placeholder {
+            width: 280px;
+            height: 380px;
+            background: linear-gradient(45deg, #00bfff, #0080cc);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+        }
+
+        .story-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .story-content p {
+            text-align: justify;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            color: #00bfff;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5), 0 2px 15px rgba(0, 191, 255, 0.3);
+        }
+
+        .education-item, .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            margin: 1.5rem auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            max-width: 75%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .education-item:hover, .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .item-title {
+            font-size: 1.5rem;
+            color: #00bfff;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-meta {
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            margin-top: 1rem;
+        }
+
+        .experience-full {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 191, 255, 0.2);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .experience-full ul {
+            margin: 0.5rem 0 1rem 1.5rem;
+            color: #d0d0d0;
+        }
+
+        .experience-full li {
+            margin-bottom: 1rem;
+        }
+
+        .experience-full strong {
+            color: #00bfff;
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .read-more-btn {
+            color: #00bfff;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 1rem;
+            display: inline-block;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        /* Skills Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 191, 255, 0.2);
+        }
+
+        .skill-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        .skill-rating {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .star {
+            color: #333;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .star.filled {
+            color: #00bfff;
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        /* Testimonials */
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            color: #00bfff;
+            font-weight: 600;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #00bfff;
+            box-shadow: 0 0 15px #00bfff;
+            transform: scale(1.2);
+        }
+
+        /* Contact Styles */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            text-decoration: none;
+            color: inherit;
+            min-height: 120px;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.3);
+        }
+
+        .contact-item span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Blog Page Styles */
+        .blog-page {
+            margin-top: 160px;
+            min-height: calc(100vh - 240px);
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            text-align: center;
+            color: #00bfff;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .blog-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hide scrollable content when blog is active */
+        body.blog-active .main-content {
+            display: none;
+        }
+
+        body.blog-active {
+            overflow-y: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        .footer p {
+            color: #e0e0e0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-container {
+                min-height: auto;
+                margin-bottom: 1rem;
+            }
+
+            .profile-placeholder {
+                width: 250px;
+                height: 300px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 2rem 1rem;
+            }
+
+            .page {
+                padding: 1rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .education-item, .experience-item {
+                max-width: 90%;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                padding: 1.5rem 0.5rem;
+                min-height: 100px;
+            }
+            
+            .contact-item i {
+                font-size: 1.5rem;
+            }
+            
+            .contact-item span {
+                font-size: 0.8rem;
+            }
+
+            .blog-page {
+                margin-top: 140px;
+                padding: 2rem 1rem;
+            }
+
+            .blog-title {
+                font-size: 2.2rem;
+            }
+
+            .blog-intro {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo" onclick="goHome()">Thalman Thilak</div>
+        <nav class="nav">
+            <a class="nav-item" onclick="showPage('story')">My Story</a>
+            <a class="nav-item" onclick="showPage('education')">Education</a>
+            <a class="nav-item" onclick="showPage('experience')">Experience</a>
+            <a class="nav-item" onclick="showPage('skills')">Skills</a>
+            <a class="nav-item" onclick="showPage('ai-skills')">AI</a>
+            <a class="nav-item" onclick="showPage('testimonials')">Testimonials</a>
+            <a class="nav-item" onclick="showPage('contact')">Contact</a>
+            <a class="nav-item blog" onclick="showBlogPage()">Blog</a>
+        </nav>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero fade-in">
+                <h1>Hello!    I'm Thalman</h1>
+                <h2>Rollout Manager  |  Product Manager  |  AI Enthusiast</h2>
+                <button class="cta-button" onclick="showPage('story')">Meet Thalman</button>
+            </div>
+        </section>
+
+        <!-- My Story Page -->
+        <section id="story" class="page light">
+            <div class="fade-in">
+                <h2 class="section-title">My Story</h2>
+                <div class="two-column">
+                    <div class="profile-container">
+                        <div class="profile-placeholder">
+                            Profile Photo
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p>Welcome to my professional journey. I'm Thalman Thilak, a passionate Rollout Manager and Product Manager with over a decade of experience in Software Rollout, quality assurance, and product management.</p>
+                        <br>
+                        <p>My career has taken me from software testing roles in Bengaluru to leading global rollout initiatives at Mercedes-Benz Mobility AG in Stuttgart, Germany. Throughout this journey, I've developed expertise in stakeholder engagement, strategic planning, and cross-functional collaboration.</p>
+                        <br>
+                        <p>I'm particularly excited about the intersection of traditional product management with AI technologies, constantly exploring how artificial intelligence can enhance user experiences and streamline business processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Page -->
+        <section id="education" class="page">
+            <div class="fade-in">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="item-title">Masters in Computer Applications</div>
+                    <div class="item-subtitle">Sikkim Manipal University</div>
+                    <div class="item-meta">2012</div>
+                </div>
+                <div class="education-item">
+                    <div class="item-title">Diploma in Computer Engineering</div>
+                    <div class="item-subtitle">Nettur Technical Training Foundation</div>
+                    <div class="item-meta">2003</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Page -->
+        <section id="experience" class="page light">
+            <div class="fade-in">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <div class="item-title">Rollout Manager</div>
+                    <div class="item-subtitle">Mercedes-Benz Mobility AG</div>
+                    <div class="item-meta">2016–Present | Stuttgart, Germany</div>
+                    <div class="experience-summary">
+                        <ul>
+                            <li>Led global software rollouts across 20+ international markets</li>
+                            <li>Managed cross-functional teams of 15+ members</li>
+                            <li>Reduced deployment time by 40% through process standardization</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(0)">Read more</div>
+                    </div>
+                    <div class="experience-full" id="exp-0">
+                        <p><strong>Key Responsibilities:</strong></p>
+                        <ul>
+                            <li>Led end-to-end rollout strategies for mobility solutions across 20+ international markets</li>
+                            <li>Managed cross-functional teams of 15+ members including developers, QA engineers, and business analysts</li>
+                            <li>Developed and implemented standardized rollout processes, reducing deployment time by 40%</li>
+                            <li>Coordinated with regional stakeholders to ensure compliance with local regulations and market requirements</li>
+                            <li>Established monitoring and feedback mechanisms for continuous improvement of rollout processes</li>
+                        </ul>
+                        <p><strong>Key Achievements:</strong></p>
+                        <ul>
+                            <li>Successfully delivered 50+ product releases with 99.5% uptime</li>
+                            <li>Reduced customer onboarding time from 2 weeks to 3 days through process optimization</li>
+                            <li>Implemented automated rollback procedures, minimizing system downtime by 60%</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(0)" style="position: static; margin-top: 1rem; display: inline-block;">Read less</div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-title">Senior Quality Engineer</div>
+                    <div class="item-subtitle">OpenText Corporation</div>
+                    <div class="item-meta">2014–2016 | Bengaluru, India</div>
+                    <div class="experience-summary">
+                        <ul>
+                            <li>Designed comprehensive test strategies for enterprise systems</li>
+                            <li>Increased test automation coverage from 30% to 80%</li>
+                            <li>Led automation initiatives using Selenium and TestNG</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(1)">Read more</div>
+                    </div>
+                    <div class="experience-full" id="exp-1">
+                        <p><strong>Key Responsibilities:</strong></p>
+                        <ul>
+                            <li>Designed and implemented comprehensive test strategies for enterprise content management systems</li>
+                            <li>Led automation initiatives using Selenium and TestNG frameworks</li>
+                            <li>Mentored junior QA engineers and established best practices for the team</li>
+                            <li>Collaborated with development teams to integrate quality gates in CI/CD pipelines</li>
+                        </ul>
+                        <p><strong>Key Achievements:</strong></p>
+                        <ul>
+                            <li>Increased test automation coverage from 30% to 80%</li>
+                            <li>Reduced manual testing effort by 50% through strategic automation</li>
+                            <li>Implemented performance testing protocols, improving system performance by 25%</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(1)" style="position: static; margin-top: 1rem; display: inline-block;">Read less</div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-title">Senior Software Test Engineer</div>
+                    <div class="item-subtitle">Qualitest Group</div>
+                    <div class="item-meta">2011–2014 | Bengaluru, India</div>
+                    <div class="experience-summary">
+                        <ul>
+                            <li>Executed testing for web and mobile applications across multiple clients</li>
+                            <li>Managed testing for 15+ concurrent projects with 100% on-time delivery</li>
+                            <li>Established standardized testing procedures across project teams</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(2)">Read more</div>
+                    </div>
+                    <div class="experience-full" id="exp-2">
+                        <p><strong>Key Responsibilities:</strong></p>
+                        <ul>
+                            <li>Executed comprehensive testing for web and mobile applications across multiple clients</li>
+                            <li>Developed test plans, test cases, and testing protocols for various project types</li>
+                            <li>Conducted functional, regression, and compatibility testing</li>
+                            <li>Provided training and guidance to junior team members</li>
+                        </ul>
+                        <p><strong>Key Achievements:</strong></p>
+                        <ul>
+                            <li>Managed testing for 15+ concurrent projects with 100% on-time delivery</li>
+                            <li>Identified and resolved critical defects, preventing potential production issues</li>
+                            <li>Established standardized testing procedures adopted across multiple project teams</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(2)" style="position: static; margin-top: 1rem; display: inline-block;">Read less</div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-title">Software Test Engineer</div>
+                    <div class="item-subtitle">IBM India Pvt. Ltd</div>
+                    <div class="item-meta">2009–2011 | Bengaluru, India</div>
+                    <div class="experience-summary">
+                        <ul>
+                            <li>Executed manual and automated testing for enterprise software solutions</li>
+                            <li>Developed reusable test scripts improving efficiency by 30%</li>
+                            <li>Collaborated with international teams across different time zones</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(3)">Read more</div>
+                    </div>
+                    <div class="experience-full" id="exp-3">
+                        <p><strong>Key Responsibilities:</strong></p>
+                        <ul>
+                            <li>Executed manual and automated testing for IBM's enterprise software solutions</li>
+                            <li>Participated in requirement analysis and test planning activities</li>
+                            <li>Performed database testing and API testing for backend systems</li>
+                            <li>Collaborated with international teams across different time zones</li>
+                        </ul>
+                        <p><strong>Key Achievements:</strong></p>
+                        <ul>
+                            <li>Contributed to successful releases of IBM's flagship products</li>
+                            <li>Developed reusable test scripts, improving testing efficiency by 30%</li>
+                            <li>Received recognition for outstanding performance and dedication</li>
+                        </ul>
+                        <div class="read-more-btn" onclick="toggleExperience(3)" style="position: static; margin-top: 1rem; display: inline-block;">Read less</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Page -->
+        <section id="skills" class="page">
+            <div class="fade-in">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Skills Page -->
+        <section id="ai-skills" class="page light">
+            <div class="fade-in">
+                <h2 class="section-title">AI Skills</h2>
+                <div class="skills-grid" id="ai-skills-grid">
+                    <!-- AI Skills will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Page -->
+        <section id="testimonials" class="page">
+            <div class="fade-in">
+                <h2 class="section-title">Testimonials</h2>
+                <div class="testimonial-container">
+                    <div class="testimonial active">
+                        <div class="testimonial-text">"Working with Thalman reminded me of someone proving 'I'm possible' rather than saying 'impossible'. His dedication and positive approach to challenges make him an invaluable team member."</div>
+                        <div class="testimonial-author">Pragya Bharti</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">"Thalman is extremely professional and hardworking. His ability to manage complex projects while maintaining excellent stakeholder relationships is truly remarkable."</div>
+                        <div class="testimonial-author">Prajna Ramdas</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">"Thalman was very hard working and had a great approach towards problem-solving. His technical expertise combined with excellent communication skills made him a standout performer."</div>
+                        <div class="testimonial-author">Gunjan Virmani</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">"Thilak is an efficient employee I have worked with. His attention to detail and commitment to quality consistently exceeded expectations."</div>
+                        <div class="testimonial-author">Anup Prakash</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">"I have personally known Thalman Thilak from 2012-2016. His professional growth and technical competence have been impressive to witness throughout our collaboration."</div>
+                        <div class="testimonial-author">Kathyayini</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">"It was a pleasure working with Thilak during his tenure at OpenText. His analytical skills and collaborative approach made significant contributions to our team's success."</div>
+                        <div class="testimonial-author">Shreevani</div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <div class="nav-dot active" onclick="showTestimonial(0)"></div>
+                        <div class="nav-dot" onclick="showTestimonial(1)"></div>
+                        <div class="nav-dot" onclick="showTestimonial(2)"></div>
+                        <div class="nav-dot" onclick="showTestimonial(3)"></div>
+                        <div class="nav-dot" onclick="showTestimonial(4)"></div>
+                        <div class="nav-dot" onclick="showTestimonial(5)"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page light">
+            <div class="fade-in">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <div class="contact-grid">
+                        <a href="#" class="contact-item" onclick="downloadResume()">
+                            <i class="fas fa-file-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                        <a href="mailto:thal.thilak@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>thal.thilak@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/theycall.thalman/" target="_blank" class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/thalman-thilak-1a009650/" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Blog Page -->
+    <section id="blog-page" class="blog-page" style="display: none;">
+        <div class="blog-content">
+            <h1 class="blog-title">Blog</h1>
+            <div class="blog-intro">
+                <p>Coming Soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Thalman Thilak. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Skills data
+        const skills = [
+            { name: 'Global Software Rollout', rating: 4 },
+            { name: 'Product configuration & Customization', rating: 4 },
+            { name: 'User onboarding', rating: 4 },
+            { name: 'Stakeholder Engagement', rating: 4 },
+            { name: 'Market analysis & Requirement gathering', rating: 4 },
+            { name: 'Strategic planning & analysis', rating: 4 },
+            { name: 'Agile Methodology (Jira & Confluence)', rating: 4 },
+            { name: 'Cross functional collaboration', rating: 5 },
+            { name: 'Project Management', rating: 4 }
+        ];
+
+        const aiSkills = [
+            { name: 'AI Fundamentals', rating: 2 },
+            { name: 'Understanding of LLMs', rating: 2 },
+            { name: 'Retrieval-Augmented Generation', rating: 2 },
+            { name: 'Prompt Engineering', rating: 3 },
+            { name: 'No code tools', rating: 2 },
+            { name: 'Chatbot creation', rating: 3 },
+            { name: 'Voice agents', rating: 2 },
+            { name: 'Process automation using n8n', rating: 3 }
+        ];
+
+        // Create skill items
+        function createSkillItem(skill) {
+            const stars = Array.from({ length: 5 }, (_, i) => 
+                `<span class="star ${i < skill.rating ? 'filled' : ''}">★</span>`
+            ).join('');
+            
+            return `
+                <div class="skill-item">
+                    <div class="skill-name">${skill.name}</div>
+                    <div class="skill-rating">${stars}</div>
+                </div>
+            `;
+        }
+
+        // Populate skills
+        document.getElementById('skills-grid').innerHTML = skills.map(createSkillItem).join('');
+        document.getElementById('ai-skills-grid').innerHTML = aiSkills.map(createSkillItem).join('');
+
+        // Home navigation
+        function goHome() {
+            if (document.body.classList.contains('blog-active')) {
+                exitBlogMode();
+            }
+            showPage('home');
+        }
+
+        // Page navigation with smooth scrolling
+        function showPage(pageId) {
+            // Exit blog mode if currently active
+            if (document.body.classList.contains('blog-active')) {
+                exitBlogMode();
+            }
+            
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            updateActiveNavItem(pageId);
+        }
+
+        // Blog page navigation
+        function showBlogPage() {
+            // Hide main content and show blog
+            document.body.classList.add('blog-active');
+            document.getElementById('blog-page').style.display = 'block';
+            document.querySelector('.main-content').style.display = 'none';
+            
+            // Update active nav item
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            document.querySelector('.nav-item.blog').classList.add('active');
+            
+            // Scroll to top of blog page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Exit blog mode
+        function exitBlogMode() {
+            document.body.classList.remove('blog-active');
+            document.getElementById('blog-page').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }
+
+        // Update active navigation item
+        function updateActiveNavItem(pageId) {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            
+            // Find and activate corresponding nav item
+            const activeNavItem = Array.from(navItems).find(item => {
+                const text = item.textContent.toLowerCase().replace(' ', '-');
+                return text === pageId || (pageId === 'story' && text === 'my-story');
+            });
+            if (activeNavItem && !activeNavItem.classList.contains('blog')) {
+                activeNavItem.classList.add('active');
+            }
+        }
+
+        // Scroll spy functionality
+        function handleScrollSpy() {
+            // Don't run scroll spy when in blog mode
+            if (document.body.classList.contains('blog-active')) {
+                return;
+            }
+            
+            const sections = document.querySelectorAll('.page');
+            const navItems = document.querySelectorAll('.nav-item:not(.blog)');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 180;
+                const sectionHeight = section.offsetHeight;
+                const scrollY = window.pageYOffset;
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.id;
+                }
+            });
+            
+            // Update active nav item based on scroll position
+            navItems.forEach(item => item.classList.remove('active'));
+            
+            if (currentSection) {
+                const activeNavItem = Array.from(navItems).find(item => {
+                    const text = item.textContent.toLowerCase().replace(' ', '-');
+                    return text === currentSection || (currentSection === 'story' && text === 'my-story');
+                });
+                if (activeNavItem) {
+                    activeNavItem.classList.add('active');
+                }
+            }
+        }
+
+        // Experience toggle functionality
+        function toggleExperience(index) {
+            const expElement = document.getElementById(`exp-${index}`);
+            const experienceItem = expElement.parentElement;
+            const readMoreBtn = experienceItem.querySelector('.experience-summary .read-more-btn');
+            
+            if (expElement.style.display === 'none' || expElement.style.display === '') {
+                expElement.style.display = 'block';
+                readMoreBtn.style.display = 'none';
+            } else {
+                expElement.style.display = 'none';
+                readMoreBtn.style.display = 'inline-block';
+            }
+        }
+
+        // Download resume function
+        function downloadResume() {
+            alert('Resume download functionality would be implemented here with actual resume file path.');
+        }
+
+        // Testimonial carousel
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            navDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            navDots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Add scroll event listener for scroll spy
+        window.addEventListener('scroll', handleScrollSpy);
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set home as active initially
+            updateActiveNavItem('home');
+            // Initial scroll spy check
+            handleScrollSpy();
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            const nav = document.querySelector('.nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
