@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+.contact-item i {
+            font-size: 2rem;
+            color: #00bfff;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover i {
+            text-shadow: 0 0 20px #00bfff;
+            transform: scale(1.1);
+        }
+
+        /* Instagram specific styling */
+        .contact-item .fa-instagram {
+            color: #E4405F;
+        }
+
+        .contact-item:hover .fa-instagram {
+            text-shadow: 0 0 20px #E4405F;
+        }
+
+        /* LinkedIn specific styling */
+        .contact-item .fa-linkedin-in {
+            color: #0077B5;
+        }
+
+        .contact-item:hover .fa-linkedin-in {
+            text-shadow: 0 0 20px #0077B5;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -224,7 +251,7 @@
         .education-item, .experience-item {
             background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
-            margin: 1.5rem auto;
+            margin: 1.5rem auto 2.5rem auto;
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
@@ -260,6 +287,20 @@
             margin-top: 1rem;
         }
 
+        .experience-summary {
+            margin-top: 1rem;
+        }
+
+        .experience-summary ul {
+            margin: 0.5rem 0 0 1.5rem;
+            color: #e0e0e0;
+        }
+
+        .experience-summary li {
+            margin-bottom: 4rem;
+            line-height: 1.4;
+        }
+
         .experience-full {
             display: none;
             margin-top: 1rem;
@@ -289,14 +330,19 @@
             color: #00bfff;
             cursor: pointer;
             text-decoration: underline;
-            margin-top: 1rem;
-            display: inline-block;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            background: rgba(0, 191, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            margin-top: 1rem;
+            display: inline-block;
         }
 
         .read-more-btn:hover {
             text-shadow: 0 0 10px #00bfff;
+            background: rgba(0, 191, 255, 0.2);
         }
 
         /* Skills Styles */
@@ -449,41 +495,33 @@
             text-align: center;
         }
 
-        /* Blog Page Styles */
-        .blog-page {
-            margin-top: 160px;
-            min-height: calc(100vh - 240px);
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .blog-title {
-            font-size: 3rem;
-            text-align: center;
+        .contact-item i {
+            font-size: 2rem;
             color: #00bfff;
-            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
-            margin-bottom: 2rem;
+            transition: all 0.3s ease;
         }
 
-        .blog-intro {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 1.2rem;
-            color: #e0e0e0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .contact-item:hover i {
+            text-shadow: 0 0 20px #00bfff;
+            transform: scale(1.1);
         }
 
-        /* Hide scrollable content when blog is active */
-        body.blog-active .main-content {
-            display: none;
+        /* Instagram specific styling */
+        .contact-item .fa-instagram {
+            color: #E4405F;
         }
 
-        body.blog-active {
-            overflow-y: auto;
+        .contact-item:hover .fa-instagram {
+            text-shadow: 0 0 20px #E4405F;
+        }
+
+        /* LinkedIn specific styling */
+        .contact-item .fa-linkedin-in {
+            color: #0077B5;
+        }
+
+        .contact-item:hover .fa-linkedin-in {
+            text-shadow: 0 0 20px #0077B5;
         }
 
         /* Footer */
@@ -569,6 +607,12 @@
                 max-width: 90%;
             }
 
+            .read-more-btn {
+                position: static;
+                margin-top: 1rem;
+                display: inline-block;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -583,22 +627,12 @@
                 font-size: 1.5rem;
             }
             
+            .contact-item i {
+                font-size: 1.5rem;
+            }
+            
             .contact-item span {
                 font-size: 0.8rem;
-            }
-
-            .blog-page {
-                margin-top: 140px;
-                padding: 2rem 1rem;
-            }
-
-            .blog-title {
-                font-size: 2.2rem;
-            }
-
-            .blog-intro {
-                font-size: 1rem;
-                margin-bottom: 2rem;
             }
         }
     </style>
@@ -615,7 +649,7 @@
             <a class="nav-item" onclick="showPage('ai-skills')">AI</a>
             <a class="nav-item" onclick="showPage('testimonials')">Testimonials</a>
             <a class="nav-item" onclick="showPage('contact')">Contact</a>
-            <a class="nav-item blog" onclick="showBlogPage()">Blog</a>
+            <a class="nav-item blog" href="https://blog.thalmanthilak.com/" target="_blank">Blog</a>
         </nav>
         <div class="mobile-menu">
             <span></span>
@@ -882,16 +916,6 @@
         </section>
     </main>
 
-    <!-- Blog Page -->
-    <section id="blog-page" class="blog-page" style="display: none;">
-        <div class="blog-content">
-            <h1 class="blog-title">Blog</h1>
-            <div class="blog-intro">
-                <p>Coming Soon...</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Thalman Thilak. All rights reserved.</p>
@@ -942,19 +966,11 @@
 
         // Home navigation
         function goHome() {
-            if (document.body.classList.contains('blog-active')) {
-                exitBlogMode();
-            }
             showPage('home');
         }
 
         // Page navigation with smooth scrolling
         function showPage(pageId) {
-            // Exit blog mode if currently active
-            if (document.body.classList.contains('blog-active')) {
-                exitBlogMode();
-            }
-            
             const targetPage = document.getElementById(pageId);
             if (targetPage) {
                 targetPage.scrollIntoView({
@@ -963,29 +979,6 @@
                 });
             }
             updateActiveNavItem(pageId);
-        }
-
-        // Blog page navigation
-        function showBlogPage() {
-            // Hide main content and show blog
-            document.body.classList.add('blog-active');
-            document.getElementById('blog-page').style.display = 'block';
-            document.querySelector('.main-content').style.display = 'none';
-            
-            // Update active nav item
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
-            document.querySelector('.nav-item.blog').classList.add('active');
-            
-            // Scroll to top of blog page
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Exit blog mode
-        function exitBlogMode() {
-            document.body.classList.remove('blog-active');
-            document.getElementById('blog-page').style.display = 'none';
-            document.querySelector('.main-content').style.display = 'block';
         }
 
         // Update active navigation item
@@ -1005,11 +998,6 @@
 
         // Scroll spy functionality
         function handleScrollSpy() {
-            // Don't run scroll spy when in blog mode
-            if (document.body.classList.contains('blog-active')) {
-                return;
-            }
-            
             const sections = document.querySelectorAll('.page');
             const navItems = document.querySelectorAll('.nav-item:not(.blog)');
             
