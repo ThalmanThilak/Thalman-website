@@ -429,6 +429,112 @@
             text-align: center;
         }
 
+        /* Neon Separator */
+        .neon-separator {
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00bfff, transparent);
+            margin: 4rem auto 2rem auto;
+            border-radius: 2px;
+            box-shadow: 
+                0 0 10px #00bfff,
+                0 0 20px #00bfff,
+                0 0 30px #00bfff;
+            animation: neonPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 
+                    0 0 10px #00bfff,
+                    0 0 20px #00bfff,
+                    0 0 30px #00bfff;
+            }
+            100% {
+                box-shadow: 
+                    0 0 15px #00bfff,
+                    0 0 30px #00bfff,
+                    0 0 45px #00bfff,
+                    0 0 60px #00bfff;
+            }
+        }
+
+        /* AI Accomplishments Subsection */
+        .ai-accomplishments {
+            margin-top: 3rem;
+        }
+
+        .subsection-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #00bfff;
+            font-weight: 500;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.4), 0 2px 10px rgba(0, 191, 255, 0.2);
+        }
+
+        /* AI Accomplishments List */
+        .accomplishments-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accomplishments-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .accomplishments-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .accomplishments-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #00bfff;
+            font-size: 1.5rem;
+            text-shadow: 
+                0 0 10px #00bfff,
+                0 0 20px #00bfff,
+                0 0 30px #00bfff,
+                0 0 40px #00bfff;
+            animation: neonBlink 3s ease-in-out infinite;
+        }
+
+        @keyframes neonBlink {
+            0%, 50%, 100% {
+                text-shadow: 
+                    0 0 10px #00bfff,
+                    0 0 20px #00bfff,
+                    0 0 30px #00bfff,
+                    0 0 40px #00bfff;
+                opacity: 1;
+            }
+            25%, 75% {
+                text-shadow: 
+                    0 0 5px #00bfff,
+                    0 0 15px #00bfff,
+                    0 0 25px #00bfff,
+                    0 0 35px #00bfff,
+                    0 0 50px #00bfff;
+                opacity: 0.8;
+            }
+        }
+
+        .accomplishments-list li strong {
+            color: #00bfff;
+            font-weight: 600;
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -636,8 +742,8 @@
         <!-- Home Page -->
         <section id="home" class="page active">
             <div class="hero fade-in">
-                <h1>Hello!    I'm Thalman</h1>
-                <h2>Rollout Manager  |  Product Manager  |  AI Enthusiast</h2>
+                <h1>Hello! I'm Thalman</h1>
+                <h2>Rollout Manager | Product Manager | AI Enthusiast</h2>
                 <button class="cta-button" onclick="showPage('story')">Meet Thalman</button>
             </div>
         </section>
@@ -820,6 +926,25 @@
                 <h2 class="section-title">AI Skills</h2>
                 <div class="skills-grid" id="ai-skills-grid">
                     <!-- AI Skills will be populated by JavaScript -->
+                </div>
+                <div class="neon-separator"></div>
+                
+                <!-- AI Accomplishments Subsection -->
+                <div class="ai-accomplishments">
+                    <h3 class="subsection-title">AI Accomplishments</h3>
+                    <div class="accomplishments-list">
+                        <ul>
+                            <li><strong>Personal Website</strong> – Built using Claude and GitHub</li>
+                            <li><strong>Blog + Automation</strong> – Created a blog site and fully automated blog posting using n8n, Perplexity, GitHub, and Google Sheets</li>
+                            <li><strong>Hiring Automation</strong> – E2E hiring process automation including voice interviews using n8n, Vapi, and ChatGPT</li>
+                            <li><strong>Stock Portfolio Automation</strong> – Automated daily investment insights (buy/hold/sell) using n8n and Perplexity</li>
+                            <li><strong>Local LLM Hosting</strong> – Hosted Deepseek locally via Ollama</li>
+                            <li><strong>Claude MCP Integration</strong> – Claude now has access to my local filesystem and Perplexity via MCP</li>
+                            <li><strong>Idea to Pitch</strong> – Brainstormed, finalized, and pitched a startup idea</li>
+                            <li><strong>App MVP in Progress</strong> – Currently building the MVP of that idea</li>
+                            <li><strong>Workplace Chatbot</strong> – Built a chatbot to share internal knowledge</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
